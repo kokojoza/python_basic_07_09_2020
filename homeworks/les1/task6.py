@@ -30,7 +30,7 @@ while True:
 
 day = 1
 tmp = user_a
-while tmp <= user_b:
+while tmp < user_b:
     tmp *= 1.1
     day += 1
 
