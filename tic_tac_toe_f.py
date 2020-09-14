@@ -2,11 +2,13 @@ from typing import List, Dict, Tuple, Union
 from itertools import cycle
 import random
 
+"""DRY"""
 
-def create_user(bot=False) -> Dict[str, Union[str, bool, List]]:
+
+def create_user(symbol='', bot=False) -> Dict[str, Union[str, bool, List]]:
     user = {
         'name': 'R2D2' if bot else input('Ваше имя\n'),
-        'symbol': 'O' if bot else 'X',
+        'symbol': 'O' if bot else symbol if symbol else 'O',
         'is_bot': bot,
         'log': [],
     }
@@ -76,8 +78,8 @@ def print_board(board):
 
 
 def tic_tac_toe():
-    user1 = create_user(False)
-    user2 = create_user(True)
+    user1 = create_user(symbol='O', bot=False)
+    user2 = create_user(symbol='X', bot=False)
     board = create_board()
     for user in cycle((user1, user2)):
         print_board(board)
