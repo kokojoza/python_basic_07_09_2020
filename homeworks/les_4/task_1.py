@@ -5,12 +5,18 @@
 """
 from sys import argv
 
-_, hour, price, bonus, *_ = argv
 
-try:
-    result = float(hour) * float(price) + float(bonus)
-    print(result)
-except ValueError as e:
-    print('Ошибка ввода данных')
-    print(e)
+def salary(hour: float, price: float, bonus: float) -> float:
+    return hour * price + bonus
 
+
+if __name__ == '__main__':
+
+    _, hour, price, bonus, *_ = argv
+
+    try:
+        result = salary(float(hour), float(price), float(bonus))
+        print(result)
+    except ValueError as e:
+        print('Ошибка ввода данных')
+        print(e)

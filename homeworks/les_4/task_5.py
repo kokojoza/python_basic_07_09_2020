@@ -5,6 +5,8 @@
 """
 import functools
 
-result = functools.reduce(lambda x, y: x * y, [num for num in range(100, 1001)])
+a = 100
+b = 1000
+result = functools.reduce(lambda x, y: x * y, [num for num in range(a, b + 1) if not num & 1])
 
 print(result)

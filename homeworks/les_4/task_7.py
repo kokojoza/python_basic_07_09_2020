@@ -21,5 +21,5 @@ def fact_gen(n):
         raise ValueError('вычисление только из натуральных чисел больше 0')
 
 
-for idx, itm in enumerate(fact_gen(12), 1):
-    print(idx, itm)
+for itm in fact_gen(0):
+    print(itm)
