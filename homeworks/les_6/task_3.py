@@ -15,10 +15,9 @@
 
 
 class Worker:
-    def __init__(self, name, surname, position):
+    def __init__(self, name, surname):
         self.name = name
         self.surname = surname
-        self.position = position
         self._income = {'salary': 0, 'bonus': 0}
 
     def get_full_name(self):
@@ -39,7 +38,7 @@ class Position(Worker):
         """
 
         self.position_name = position_name
-        super().__init__(name, surname, salary)
+        super().__init__(name, surname)
         super()._income['salary'] = salary
         super()._income['bonus'] = bonus
 

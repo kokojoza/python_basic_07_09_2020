@@ -26,6 +26,8 @@ class TrafficLight:
 
     def __init__(self):
         self.__color = self.__modes[0][0]
+        self.__light_start = time.time()
+        self.__next_light = 1
         self.__tic()
 
     def running(self):
@@ -62,11 +64,12 @@ class TrafficLight:
 
 if __name__ == '__main__':
     lighter = TrafficLight()
-    time.sleep(0.5)
-    lighter2 = TrafficLight()
-    time.sleep(0.5)
-    lighter3 = TrafficLight()
-    time.sleep(0.5)
-    for light in cycle((lighter, lighter2, lighter3)):
-        print(light.color())
-        time.sleep(1)
+    lighter.running()
+    # time.sleep(0.5)
+    # lighter2 = TrafficLight()
+    # time.sleep(0.5)
+    # lighter3 = TrafficLight()
+    # time.sleep(0.5)
+    # for light in cycle((lighter, lighter2, lighter3)):
+    #     print(light.color())
+    #     time.sleep(1)
